@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  
-  <title>Restaurant Apps Starter Project</title>
-</head>
-<body>
-  <h1>Restaurant Apps Starter Project</h1>
-  <p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-  <p>Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros sebagai background hero elemen</p>
-  <img src="./images/heros/hero-image_1.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_2.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_3.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_4.jpg" width="450" alt="">
-</body>
+    <meta name="description" content="Free Best Restaurant catalogue for you" />
+    <link rel="icon" href="./images/icons/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet" />
+    <!-- <link rel="manifest" href="./app.webmanifest" /> -->
+    <meta name="theme-color" content="#DB0000" />
+    <!-- <link rel="apple-touch-icon" href="/icons/icon-192x192.png" /> -->
+    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+    <title>Resto Mania</title>
+  </head>
+  <body>
+    <header
+      class="app-bar d-flex justify-content-space-between align-items-center">
+      <div class="menu-drawer col-md-5">
+        <button id="hamburgerButton">☰</button>
+      </div>
+      <div class="app-brand col-5 justify-content-start justify-md-content-end">
+        <h1>Resto Mania</h1>
+      </div>
+      <nav id="navigationDrawer" class="app-nav col-5 justify-content-end">
+        <ul>
+          <li><a href="#/home">Home</a></li>
+          <li><a href="#/favorite">Favorite</a></li>
+          <li><a href="#/favorite">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="mainContent"></main>
+    <footer>
+      <div id="footerTools"></div>
+      <p>
+        About Us
+        <a href="https://github.com/mazdel" target="_blank" rel="noreferrer">
+          Github
+        </a>
+      </p>
+    </footer>
+  </body>
 </html>

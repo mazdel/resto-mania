@@ -1,3 +1,100 @@
 @media screen and (max-width: 768px) {
-  /*  */
+  .justify-md-content-start {
+    justify-content: flex-start;
+  }
+  .justify-md-content-center {
+    justify-content: center;
+  }
+  .justify-md-content-end {
+    justify-content: flex-end;
+  }
+  .justify-md-content-space-around {
+    justify-content: space-around;
+  }
+  .justify-md-content-space-between {
+    justify-content: space-between;
+  }
+  .justify-md-content-space-evenly {
+    justify-content: space-evenly;
+  }
+
+  .col-md-1 {
+    flex: 0 0 auto;
+    width: 10%;
+  }
+  .col-md-2 {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+  .col-md-3 {
+    flex: 0 0 auto;
+    width: 30%;
+  }
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: 40%;
+  }
+  .col-md-5 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .col-md-6 {
+    flex: 0 0 auto;
+    width: 60%;
+  }
+  .col-md-7 {
+    flex: 0 0 auto;
+    width: 70%;
+  }
+  .col-md-8 {
+    flex: 0 0 auto;
+    width: 80%;
+  }
+  .col-md-9 {
+    flex: 0 0 auto;
+    width: 90%;
+  }
+  .col-md-10 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .menu-drawer {
+    display: inherit;
+  }
+  .app-nav {
+    position: absolute;
+    left: -200px;
+    transition: all 0.3s;
+    width: 150px;
+    background-color: darkorange;
+    justify-content: start;
+    top: 10vh;
+    min-height: 90vh;
+    z-index: 9999;
+  }
+  .app-nav.open {
+    left: 0;
+  }
+  .app-nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5em 1em;
+  }
+  .app-nav ul li {
+    padding: 1em 0;
+  }
+  .app-bar ul li a {
+    width: 100%;
+  }
+  .app-brand {
+    text-align: right;
+  }
+  .app-brand h1 {
+    font-size: 1.8em;
+  }
+  #hamburgerButton {
+    background-color: darkorange;
+    border: solid thin;
+    border-radius: 10px;
+  }
 }

@@ -1,3 +1,181 @@
+body {
+  margin: 0;
+}
+a:hover {
+  font-weight: bolder;
+}
 img {
   display: block;
+}
+
+button {
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.d-flex {
+  display: flex;
+}
+.d-flex > * {
+  display: inherit;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-col-top {
+  flex-direction: column;
+}
+
+.flex-col-bottom {
+  flex-direction: column-reverse;
+}
+
+.flex-row-right {
+  flex-direction: row-reverse;
+}
+
+.flex-row-left {
+  flex-direction: row;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-end {
+  justify-content: flex-end;
+}
+.justify-content-space-around {
+  justify-content: space-around;
+}
+.justify-content-space-between {
+  justify-content: space-between;
+}
+.justify-content-space-evenly {
+  justify-content: space-evenly;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+.align-items-start {
+  align-items: flex-start;
+}
+.align-items-end {
+  align-items: flex-end;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-baseline {
+  align-items: baseline;
+}
+.align-content-start {
+  align-content: flex-start;
+}
+.align-content-center {
+  align-content: center;
+}
+.align-content-end {
+  align-content: flex-end;
+}
+.align-content-space-around {
+  align-content: space-around;
+}
+.align-content-space-between {
+  align-content: space-between;
+}
+.align-content-space-evenly {
+  align-content: space-evenly;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+.align-self-center {
+  align-self: center;
+}
+.align-self-end {
+  align-self: flex-end;
+}
+.align-self-baseline {
+  align-self: baseline;
+}
+.align-self-stretch {
+  align-self: stretch;
+}
+
+.col {
+  flex: 1 0 0%;
+}
+.col-1 {
+  flex: 0 0 auto;
+  width: 10%;
+}
+.col-2 {
+  flex: 0 0 auto;
+  width: 20%;
+}
+.col-3 {
+  flex: 0 0 auto;
+  width: 30%;
+}
+.col-4 {
+  flex: 0 0 auto;
+  width: 40%;
+}
+.col-5 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+.col-6 {
+  flex: 0 0 auto;
+  width: 60%;
+}
+.col-7 {
+  flex: 0 0 auto;
+  width: 70%;
+}
+.col-8 {
+  flex: 0 0 auto;
+  width: 80%;
+}
+.col-9 {
+  flex: 0 0 auto;
+  width: 90%;
+}
+.col-10 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.menu-drawer {
+  display: none;
+}
+
+.app-bar {
+  background-color: darkorange;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 10vh;
+}
+.app-bar * {
+  color: white;
+  text-decoration: none;
+}
+.app-bar ul {
+  list-style-type: none;
+  display: inline-flex;
+}
+.app-bar ul li a {
+  padding: 0.5em;
+  font-size: 1.4rem;
+}
+#mainContent {
+  min-height: 80vh;
 }
