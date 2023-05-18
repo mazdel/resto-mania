@@ -1,4 +1,4 @@
-import { DrawerInitiator } from '../utils/drawer-initiator';
+import DrawerInitiator from '../utils/drawer-initiator';
 
 class App {
   constructor({ button, drawer, content }) {
@@ -11,10 +11,10 @@ class App {
 
   initAppShell() {
     const drawer = new DrawerInitiator({
-      button:this.button,drawer: this.drawer,content: this.content
+      button: this.button, drawer: this.drawer, content: this.content,
     });
     drawer.init();
   }
 }
 
-export { App };
+export default App;

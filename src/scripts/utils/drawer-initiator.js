@@ -4,10 +4,11 @@ class DrawerInitiator {
     this.drawer = drawer;
     this.content = content;
   }
+
   init() {
     this.button.addEventListener('click', (event) => {
       event.stopPropagation();
-      if(this.drawer.classList.contains('open')){
+      if (this.drawer.classList.contains('open')) {
         return this.closeDrawer();
       }
       return this.openDrawer();
@@ -23,4 +24,4 @@ class DrawerInitiator {
   }
 }
 
-export { DrawerInitiator };
+export default DrawerInitiator;
