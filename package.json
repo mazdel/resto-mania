@@ -6,6 +6,8 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
+    "serve": "http-server -p 3002 dist",
+    "build-serve": "npm run build && npm run serve",
     "test": "karma start",
     "lint": "eslint ./src"
   },
@@ -22,6 +24,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
     "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^4.2.0",
     "karma": "^5.2.3",
