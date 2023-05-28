@@ -1,20 +1,26 @@
 @media screen and (max-width: 768px) {
   .justify-md-content-start {
+    display: flex;
     justify-content: flex-start;
   }
   .justify-md-content-center {
+    display: flex;
     justify-content: center;
   }
   .justify-md-content-end {
+    display: flex;
     justify-content: flex-end;
   }
   .justify-md-content-space-around {
+    display: flex;
     justify-content: space-around;
   }
   .justify-md-content-space-between {
+    display: flex;
     justify-content: space-between;
   }
   .justify-md-content-space-evenly {
+    display: flex;
     justify-content: space-evenly;
   }
 
