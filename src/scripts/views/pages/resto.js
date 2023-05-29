@@ -1,5 +1,6 @@
 import DataSource from '../../data/data-source';
 import { createDetailResto } from '../templates/template-creator';
+import favoriteButtonInitiator from '../../utils/favorite-button-initiator';
 import UrlParser from '../../routes/url-parser';
 import CONFIG from '../../globals/config';
 
@@ -20,6 +21,7 @@ const Resto = {
       <div class="body-content" id="resto-detail">
         
       </div>
+      <div id="fav-button-container"></div>
     </section>
     `;
   },
@@ -32,6 +34,7 @@ const Resto = {
     const addressContainer = document.querySelector('#resto-address');
     const imageContainer = document.querySelector('#resto-image');
     const categoriesContainer = document.querySelector('#resto-categories');
+    const favButtonContainer = document.querySelector('#fav-button-container');
 
     nameContainer.innerHTML = dataSource.name;
     imageContainer.src = CONFIG.BASE_IMG_PATH.MEDIUM + dataSource.pictureId;
@@ -40,6 +43,11 @@ const Resto = {
       .map((category) => category.name)
       .join(', ');
     detailContainer.innerHTML = createDetailResto(dataSource);
+
+    favoriteButtonInitiator.init({
+      container: favButtonContainer,
+      resto: dataSource,
+    });
 
     console.log(dataSource);
   },

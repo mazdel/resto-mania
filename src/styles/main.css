@@ -7,7 +7,7 @@ body *:focus {
   outline-color: red;
   outline-width: 2px;
   outline-offset: 2px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   padding: 0 10px;
 }
 a {
@@ -376,6 +376,19 @@ button {
   color: darkgrey;
   justify-content: end;
   display: flex;
+}
+.FAB {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  border-radius: 100%;
+  background-color: red;
+  border: 0;
+  color: white;
+  padding: 1.5em;
+}
+.FAB span {
+  font-size: 1.5em;
 }
 .footnote {
   min-height: 4vh;

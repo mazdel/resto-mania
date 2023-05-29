@@ -62,4 +62,19 @@ const createDetailResto = (resto) => /* html */ `
   </article>
 `;
 
-export { createRestoItem, createDetailResto };
+const createFavoriteButton = (id = 'fav-button') => /* html */ `
+  <button aria-label="tambahkan ke favorit" class="FAB" id="${id}">
+    <span class="far fa-heart"></span>
+  </button>
+`;
+const createUnfavoriteButton = (id = 'unfav-button') => /* html */ `
+  <button aria-label="hapus dari favorit" class="FAB" id="${id}">
+    <span class="fas fa-heart"></span>
+  </button>
+`;
+export {
+  createRestoItem,
+  createDetailResto,
+  createFavoriteButton,
+  createUnfavoriteButton,
+};
