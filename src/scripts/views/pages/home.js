@@ -19,6 +19,7 @@ const Home = {
     `;
   },
   async afterRender() {
+    window.scrollTo(0, 0);
     const dataSource = await DataSource.listRestaurants();
     const restoContainer = document.querySelector('#resto-list');
     dataSource.forEach((resto) => {

@@ -343,6 +343,40 @@ button {
 .detail-content > * {
   margin: 1em;
 }
+#resto-reviews {
+  background-color: darkorange;
+  color: white;
+}
+.customer-review {
+  box-shadow: 0px 2px 5px grey;
+  border-radius: 10px;
+  padding: 0.5em;
+  color: black;
+  background-color: whitesmoke;
+}
+.customer-name {
+  font-weight: bolder;
+}
+/* .customer-comment {
+  padding: 0 1.5em;
+} */
+.customer-comment::before {
+  content: '\f10d';
+  font: var(--fa-font-solid);
+  font-style: italic;
+  vertical-align: super;
+}
+.customer-comment::after {
+  content: '\f10e';
+  font: var(--fa-font-solid);
+  font-style: italic;
+  vertical-align: sub;
+}
+.review-date {
+  color: darkgrey;
+  justify-content: end;
+  display: flex;
+}
 .footnote {
   min-height: 4vh;
   background-color: darkorange;
