@@ -251,6 +251,11 @@ button {
   background-color: darkorange;
   padding: 1em 1em;
   color: whitesmoke;
+  min-height: 8vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .head-content p {
   margin: 0;
@@ -386,6 +391,7 @@ button {
   border: 0;
   color: white;
   padding: 1.5em;
+  cursor: pointer;
 }
 .FAB span {
   font-size: 1.5em;
