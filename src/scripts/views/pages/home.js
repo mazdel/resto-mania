@@ -25,7 +25,6 @@ const Home = {
     dataSource.forEach((resto) => {
       restoContainer.innerHTML += createRestoItem(resto);
     });
-    console.log(dataSource);
   },
 };
 export default Home;
