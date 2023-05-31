@@ -3,12 +3,11 @@ body {
   font-family: Quicksand, sans-serif;
 }
 body *:focus {
-  outline-style: dotted;
-  outline-color: red;
-  outline-width: 2px;
+  outline-style: solid;
+  outline-color: lightcoral;
+  outline-width: 1px;
   outline-offset: 2px;
   /* border-radius: 5px; */
-  padding: 0 10px;
 }
 a {
   text-decoration: none;
@@ -261,7 +260,7 @@ button {
   margin: 0;
 }
 .head-content.fav-page {
-  margin: 0.5em 0;
+  margin: 0.2em 0;
   min-height: 3vh;
 }
 .body-content {
@@ -349,6 +348,9 @@ button {
   box-shadow: 0px 2px 9px grey;
   margin: 0.5em;
 }
+.detail-content .detail-content {
+  box-shadow: none;
+}
 .detail-content > * {
   margin: 1em;
 }
@@ -356,12 +358,17 @@ button {
   background-color: darkorange;
   color: white;
 }
+
 .customer-review {
   box-shadow: 0px 2px 5px grey;
   border-radius: 10px;
   padding: 0.5em;
   color: black;
   background-color: whitesmoke;
+}
+.customer-review form {
+  display: flex;
+  flex-wrap: wrap;
 }
 .customer-name {
   font-weight: bolder;
@@ -385,6 +392,20 @@ button {
   color: darkgrey;
   justify-content: end;
   display: flex;
+}
+.form-control {
+  margin: 0.5em;
+  border-radius: 5px;
+  border-width: thin;
+  border-color: darkorange;
+  min-height: fit-content;
+  padding: 0.5em;
+}
+
+button.form-control {
+  color: white;
+  background-color: darkorange;
+  cursor: pointer;
 }
 .FAB {
   position: fixed;

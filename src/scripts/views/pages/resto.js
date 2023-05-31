@@ -1,6 +1,7 @@
 import DataSource from '../../data/data-source';
 import { createDetailResto } from '../templates/template-creator';
 import favoriteButtonInitiator from '../../utils/favorite-button-initiator';
+import newReview from '../../utils/form-review';
 import UrlParser from '../../routes/url-parser';
 import CONFIG from '../../globals/config';
 
@@ -48,7 +49,11 @@ const Resto = {
       container: favButtonContainer,
       resto: dataSource,
     });
-
+    await newReview.init({
+      idResto: dataSource.id,
+      idContainer: '#newReview',
+      idResultContainer: '#reviews',
+    });
     console.log(dataSource);
   },
 };

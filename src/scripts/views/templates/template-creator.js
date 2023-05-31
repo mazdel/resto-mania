@@ -1,5 +1,6 @@
 import ellipsisParagraph from '../../utils/ellipsis-paragraph';
 import CONFIG from '../../globals/config';
+import { createListMenu, createReview } from './detail-templates';
 
 const createRestoItem = (resto) => /* html */ `
   <article id='${resto.id}' class="item-content col-3 col-md-10">
@@ -18,20 +19,6 @@ const createRestoItem = (resto) => /* html */ `
     </summary>
   </article>
 `;
-
-// prettier-ignore
-const createListMenu = (menus) => (
-  menus.map((menu) => /* html */ `<li>${menu.name}</li>`).join('')
-);
-// prettier-ignore
-const createReview = (reviews) => (
-  reviews.map((review) => /* html */ `
-      <section class="customer-review d-flex flex-wrap">
-        <p class="customer-name col-6">${review.name}</p>
-        <p class="review-date col-4">${review.date}</p>
-        <p class="customer-comment col-10"> ${review.review} </p>
-      </section>
-  `).join(''));
 
 const createDetailResto = (resto) => /* html */ `
   
@@ -58,7 +45,12 @@ const createDetailResto = (resto) => /* html */ `
   </article>
   <article id="resto-reviews" class="detail-content col-10 d-flex flex-col-top justify-content-center">
     <h3>Review para mania</h3>
+    <div id="newReview">
+    </div>
+    <div id="reviews" class="detail-content">
     ${createReview(resto.customerReviews)}
+    </div>
+    
   </article>
 `;
 
