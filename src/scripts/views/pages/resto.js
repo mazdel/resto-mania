@@ -54,7 +54,6 @@ const Resto = {
       idContainer: '#newReview',
       idResultContainer: '#reviews',
     });
-    console.log(dataSource);
   },
 };
 export default Resto;

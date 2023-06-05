@@ -4,6 +4,7 @@ import '../styles/medium.css';
 import '../styles/small.css';
 
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 // eslint-disable-next-line no-unused-vars
 const app = new App({
@@ -14,6 +15,7 @@ const app = new App({
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
 
 window.addEventListener('hashchange', () => {

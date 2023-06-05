@@ -16,6 +16,7 @@ module.exports = merge(common, {
       },
     },
     compress: true,
-    allowedHosts: "all",
+    allowedHosts: 'all',
   },
+  plugins: [],
 });

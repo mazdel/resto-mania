@@ -9,7 +9,6 @@ const favoriteButtonInitiator = {
   async init({ container, resto }) {
     this.container = container;
     this.resto = resto;
-    console.log(resto);
     await this.render();
   },
 
