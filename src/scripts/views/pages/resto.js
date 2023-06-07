@@ -45,9 +45,21 @@ const Resto = {
       .join(', ');
     detailContainer.innerHTML = createDetailResto(dataSource);
 
-    favoriteButtonInitiator.init({
+    await favoriteButtonInitiator.init({
       container: favButtonContainer,
-      resto: dataSource,
+      resto: {
+        ...dataSource,
+        id: dataSource.id,
+        name: dataSource.name,
+        description: dataSource.description,
+        city: dataSource.city,
+        address: dataSource.address,
+        pictureId: dataSource.pictureId,
+        categories: dataSource.categories,
+        menus: dataSource.menus,
+        rating: dataSource.rating,
+        customerReviews: dataSource.customerReviews,
+      },
     });
     await newReview.init({
       idResto: dataSource.id,
