@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true
+    "node": true,
+    "jasmine": true
   },
   "extends": "airbnb-base",
   "overrides": [],
@@ -10,7 +11,6 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": ["specs/**/*.js", "**/vendor/*.js"],
   "rules": {
     "no-console": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
