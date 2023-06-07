@@ -21,6 +21,7 @@ module.exports = function (config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'specs/**/*Spec.js': ['webpack', 'sourcemap'],
+      'specs/**/*-test.js': ['webpack', 'sourcemap'],
     },
 
     webpack: {
