@@ -10,6 +10,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "ignorePatterns": ["specs/**/*.js", "**/vendor/*.js"],
   "rules": {
     "no-console": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
