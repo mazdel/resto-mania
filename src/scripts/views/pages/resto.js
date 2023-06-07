@@ -48,7 +48,6 @@ const Resto = {
     await favoriteButtonInitiator.init({
       container: favButtonContainer,
       resto: {
-        ...dataSource,
         id: dataSource.id,
         name: dataSource.name,
         description: dataSource.description,
