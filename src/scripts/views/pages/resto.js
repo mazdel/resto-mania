@@ -1,6 +1,7 @@
 import DataSource from '../../data/data-source';
 import { createDetailResto } from '../templates/template-creator';
-import favoriteButtonInitiator from '../../utils/favorite-button-initiator';
+import FavoriteButtonPresenter from '../../utils/favorite-button-presenter';
+import FavoriteRestaurantIDB from '../../data/favorite-restaurants-idb';
 import newReview from '../../utils/form-review';
 import UrlParser from '../../routes/url-parser';
 import CONFIG from '../../globals/config';
@@ -45,8 +46,9 @@ const Resto = {
       .join(', ');
     detailContainer.innerHTML = createDetailResto(dataSource);
 
-    await favoriteButtonInitiator.init({
+    await FavoriteButtonPresenter.init({
       container: favButtonContainer,
+      favoriteRestaurants: FavoriteRestaurantIDB,
       resto: {
         id: dataSource.id,
         name: dataSource.name,

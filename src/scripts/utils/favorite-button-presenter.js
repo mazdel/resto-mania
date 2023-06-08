@@ -3,12 +3,11 @@ import {
   createUnfavoriteButton,
 } from '../views/templates/template-creator';
 
-import FavoriteRestaurantIDB from '../data/favorite-restaurants-idb';
-
-const favoriteButtonInitiator = {
-  async init({ container, resto }) {
+const FavoriteButtonPresenter = {
+  async init({ container, resto, favoriteRestaurants }) {
     this.container = container;
     this.resto = resto;
+    this.favoriteRestaurants = favoriteRestaurants;
     await this.render();
   },
 
@@ -22,14 +21,14 @@ const favoriteButtonInitiator = {
   },
 
   async isRestoExist(id) {
-    return !!(await FavoriteRestaurantIDB.get(id));
+    return !!(await this.favoriteRestaurants.get(id));
   },
 
   async favorite() {
     this.container.innerHTML = createFavoriteButton('fav-button');
     const favButton = document.querySelector('#fav-button');
     favButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIDB.put(this.resto);
+      await this.favoriteRestaurants.put(this.resto);
       await this.render();
     });
   },
@@ -37,9 +36,9 @@ const favoriteButtonInitiator = {
     this.container.innerHTML = createUnfavoriteButton('unfav-button');
     const unFavButton = document.querySelector('#unfav-button');
     unFavButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIDB.delete(this.resto.id);
+      await this.favoriteRestaurants.delete(this.resto.id);
       await this.render();
     });
   },
 };
-export default favoriteButtonInitiator;
+export default FavoriteButtonPresenter;

@@ -10,15 +10,20 @@ const dbPromise = openDB(DB_NAME, DB_VERSION, {
 
 const FavoriteRestaurantIDB = {
   async get(id) {
+    if (!id) return false;
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
   },
   async getAll() {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
   async put(resto) {
+    if (!Object.prototype.hasOwnProperty.call(resto, 'id')) {
+      return false;
+    }
     return (await dbPromise).put(OBJECT_STORE_NAME, resto);
   },
   async delete(id) {
+    if (!id) return false;
     return (await dbPromise).delete(OBJECT_STORE_NAME, id);
   },
 };
