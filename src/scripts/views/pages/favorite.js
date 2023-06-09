@@ -23,10 +23,12 @@ const Favorite = {
     const restoContainer = document.querySelector('#resto-list');
     if (dataSource.length === 0) {
       restoContainer.innerHTML = createNotFoundResto();
+      return false;
     }
     dataSource.forEach((resto) => {
       restoContainer.innerHTML += createRestoItem(resto);
     });
+    return true;
   },
 };
 export default Favorite;

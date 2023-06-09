@@ -1,5 +1,8 @@
 import DataSource from '../../data/data-source';
-import { createRestoItem } from '../templates/template-creator';
+import {
+  createRestoItem,
+  createNotFoundResto,
+} from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -22,9 +25,14 @@ const Home = {
     window.scrollTo(0, 0);
     const dataSource = await DataSource.listRestaurants();
     const restoContainer = document.querySelector('#resto-list');
+    if (dataSource.length === 0) {
+      restoContainer.innerHTML = createNotFoundResto;
+      return false;
+    }
     dataSource.forEach((resto) => {
       restoContainer.innerHTML += createRestoItem(resto);
     });
+    return true;
   },
 };
 export default Home;

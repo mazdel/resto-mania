@@ -34,7 +34,7 @@ const createNotFoundResto = () => /* html */ `
     <summary class='item-content-body'>
     <h3>
       <a href='/'> 
-        Restaurant tidak ditemukan
+        Tidak ada Restaurant untuk ditampilkan
       </a>
     </h3>
       <p></p>
