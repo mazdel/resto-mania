@@ -74,7 +74,6 @@ const corsStyles = new Route(
   }),
 );
 
-// TODO : cache styles
 registerRoute(navigationRoute);
 registerRoute(imageAssetRoute);
 registerRoute(apiRoute);

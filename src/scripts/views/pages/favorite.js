@@ -1,5 +1,8 @@
 import FavoriteRestaurantsIDB from '../../data/favorite-restaurants-idb';
-import { createRestoItem } from '../templates/template-creator';
+import {
+  createRestoItem,
+  createNotFoundResto,
+} from '../templates/template-creator';
 
 const Favorite = {
   async render() {
@@ -13,10 +16,14 @@ const Favorite = {
     </section>
     `;
   },
+
   async afterRender() {
     window.scrollTo(0, 0);
     const dataSource = await FavoriteRestaurantsIDB.getAll();
     const restoContainer = document.querySelector('#resto-list');
+    if (dataSource.length === 0) {
+      restoContainer.innerHTML = createNotFoundResto();
+    }
     dataSource.forEach((resto) => {
       restoContainer.innerHTML += createRestoItem(resto);
     });

@@ -17,7 +17,6 @@ const createReview = (reviews) => (
       </section>
   `).join(''));
 
-// TODO : lanjut buatin form dan utils untuk action postnya
 const createReviewForm = (restoId) => /* html */ `
   <section class="customer-review d-flex flex-wrap">
   <form id="${restoId}" class="col-10 justify-content-space-between">
