@@ -13,6 +13,18 @@ const navigationRoute = new NavigationRoute(
     cacheName: 'navigations',
   }),
 );
+const jsAndManifest = new Route(({ url }) => {
+  /* eslint-disable no-restricted-globals */
+  const allowedExtensions = ['js', 'json', 'webmanifest'];
+  const isOrigin = url.origin === location.origin;
+  const file = url.pathname.split('.');
+  const extension = file[file.length - 1];
+
+  const result = isOrigin && allowedExtensions.includes(extension);
+  console.log(extension, result);
+  return result;
+  /* eslint-enable */
+}, new NetworkFirst({ cacheName: 'js-manifest' }));
 
 const imageAssetRoute = new Route(
   ({ url }) => {
@@ -75,6 +87,7 @@ const corsStyles = new Route(
 );
 
 registerRoute(navigationRoute);
+registerRoute(jsAndManifest);
 registerRoute(imageAssetRoute);
 registerRoute(apiRoute);
 registerRoute(styleAssetRoute);
