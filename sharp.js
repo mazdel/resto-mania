@@ -2,7 +2,7 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const target = path.resolve(__dirname, 'src/public/images/heros');
+const target = path.resolve(__dirname, 'src/public/images/heroes');
 const dest = path.resolve(__dirname, 'src/public/images/alt_heroes');
 
 if (!fs.existsSync(dest)) {
@@ -25,6 +25,15 @@ fs.readdirSync(target).forEach((image) => {
       path.resolve(
         __dirname,
         `${dest}/${image.split('.').slice(0, -1).join('.')}-small.jpg`,
+      ),
+    );
+
+  sharp(`${target}/${image}`)
+    .resize(200)
+    .toFile(
+      path.resolve(
+        __dirname,
+        `${dest}/${image.split('.').slice(0, -1).join('.')}-lqip.jpg`,
       ),
     );
 });
