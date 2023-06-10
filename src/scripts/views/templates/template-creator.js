@@ -1,3 +1,6 @@
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 import ellipsisParagraph from '../../utils/ellipsis-paragraph';
 import CONFIG from '../../globals/config';
 import { createListMenu, createReview } from './detail-templates';
@@ -10,7 +13,9 @@ const createRestoItem = (resto) => /* html */ `
         <div class="item-legend-right">${resto.rating || ''}</div>
       
       <div class='item-image'>
-        <img src='${CONFIG.BASE_IMG_PATH.SMALL}${resto.pictureId}'/>
+        <img class="lazyload" data-src='${CONFIG.BASE_IMG_PATH.SMALL}${
+  resto.pictureId
+}'/>
       </div>
     </figure>
     <summary class='item-content-body'>

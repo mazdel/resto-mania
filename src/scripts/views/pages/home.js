@@ -1,3 +1,6 @@
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 import DataSource from '../../data/data-source';
 import {
   createRestoItem,
@@ -10,9 +13,9 @@ const Home = {
     <section id='hero'>
       <div class='hero'>
         <picture>
-          <source media="(min-width: 768px)" srcset="/images/heros/hero-image_4.jpg">
-          <source media="(min-width: 480px)" srcset="/images/alt_heroes/hero-image_4-medium.jpg">
-          <img alt="hero image" src='/images/alt_heroes/hero-image_4-small.jpg'>
+          <source media="(min-width: 768px)" data-srcset="/images/heros/hero-image_4.jpg">
+          <source media="(min-width: 480px)" data-srcset="/images/alt_heroes/hero-image_4-medium.jpg">
+          <img alt="hero image" class="lazyload" data-src='/images/alt_heroes/hero-image_4-small.jpg'>
         </picture>
       </div>
     </section>
