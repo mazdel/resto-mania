@@ -20,9 +20,7 @@ const jsAndManifest = new Route(({ url }) => {
   const file = url.pathname.split('.');
   const extension = file[file.length - 1];
 
-  const result = isOrigin && allowedExtensions.includes(extension);
-  console.log(extension, result);
-  return result;
+  return isOrigin && allowedExtensions.includes(extension);
   /* eslint-enable */
 }, new NetworkFirst({ cacheName: 'js-manifest' }));
 
