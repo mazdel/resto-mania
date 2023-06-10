@@ -11,7 +11,11 @@ const Resto = {
     return /* html */ `
     <section id='hero'>
       <div class='hero'>
-        <img id="resto-image" alt="hero image" src='/images/heros/hero-image_4.jpg'>
+        <picture>
+          <source id="resto-image-alt-768" media="(min-width: 768px)" srcset="/images/heros/hero-image_4.jpg">
+          <source id="resto-image-alt-480" media="(min-width: 480px)" srcset="/images/alt_heroes/hero-image_4-medium.jpg">
+          <img id="resto-image" alt="hero image" src='/images/alt_heroes/hero-image_4-small.jpg'>
+        </picture>
       </div>
     </section>
     <section class='content' id="content">
@@ -34,12 +38,24 @@ const Resto = {
     const detailContainer = document.querySelector('#resto-detail');
     const nameContainer = document.querySelector('#resto-name');
     const addressContainer = document.querySelector('#resto-address');
+
     const imageContainer = document.querySelector('#resto-image');
+    const imageContainerAlt480 = document.querySelector('#resto-image-alt-480');
+    const imageContainerAlt768 = document.querySelector('#resto-image-alt-768');
+
     const categoriesContainer = document.querySelector('#resto-categories');
     const favButtonContainer = document.querySelector('#fav-button-container');
 
     nameContainer.innerHTML = dataSource.name;
-    imageContainer.src = CONFIG.BASE_IMG_PATH.MEDIUM + dataSource.pictureId;
+    imageContainer.src = CONFIG.BASE_IMG_PATH.SMALL + dataSource.pictureId;
+
+    imageContainerAlt480.srcset = `
+      ${CONFIG.BASE_IMG_PATH.MEDIUM}${dataSource.pictureId}
+    `;
+
+    imageContainerAlt768.srcset = `
+      ${CONFIG.BASE_IMG_PATH.LARGE + dataSource.pictureId}
+    `;
     addressContainer.innerHTML = `${dataSource.address}, ${dataSource.city}`;
     categoriesContainer.innerHTML = dataSource.categories
       .map((category) => category.name)

@@ -9,7 +9,11 @@ const Home = {
     return /* html */ `
     <section id='hero'>
       <div class='hero'>
-        <img alt="hero image" src='/images/heros/hero-image_4.jpg'>
+        <picture>
+          <source media="(min-width: 768px)" srcset="/images/heros/hero-image_4.jpg">
+          <source media="(min-width: 480px)" srcset="/images/alt_heroes/hero-image_4-medium.jpg">
+          <img alt="hero image" src='/images/alt_heroes/hero-image_4-small.jpg'>
+        </picture>
       </div>
     </section>
     <section class='content' id="content">
