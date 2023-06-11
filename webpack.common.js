@@ -32,7 +32,9 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks(chunk) {
+        return chunk.name !== 'sw';
+      },
       minSize: 20000,
       maxSize: 70000,
       minChunks: 1,
