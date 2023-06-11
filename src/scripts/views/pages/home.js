@@ -14,9 +14,9 @@ const Home = {
     <section id='hero'>
       <div class='hero'>
         <picture>
-          <source media="(min-width: 768px)" data-srcset="/images/alt_heroes/vietnamese-food.webp">
-          <source media="(min-width: 480px)" data-srcset="/images/alt_heroes/vietnamese-food-medium.webp">
-          <img alt="hero image" src="/images/alt_heroes/vietnamese-food-lqip.webp" class="lazyload" data-src='/images/alt_heroes/vietnamese-food-small.webp'>
+          <source media="(min-width: 768px)" data-srcset="/images/alt_heroes/vietnamese-food.jpg">
+          <source media="(min-width: 480px)" data-srcset="/images/alt_heroes/vietnamese-food-medium.jpg">
+          <img alt="hero image" src="/images/alt_heroes/vietnamese-food-lqip.jpg" class="lazyload" data-src='/images/alt_heroes/vietnamese-food-small.jpg'>
         </picture>
       </div>
     </section>

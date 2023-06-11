@@ -35,7 +35,7 @@ const createNotFoundResto = () => /* html */ `
   <article id='resto-not-found' class="item-content col-10">
     <figure class='item-content-head'>
       <div class='item-image'>
-        <img src='/images/alt_heroes/hero-image_4.webp'/>
+        <img src='/images/alt_heroes/hero-image_4.jpg'/>
       </div>
     </figure>
     <summary class='item-content-body'>

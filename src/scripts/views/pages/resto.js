@@ -16,9 +16,9 @@ const Resto = {
     <section id='hero'>
       <div class='hero'>
         <picture>
-          <source id="resto-image-alt-768" media="(min-width: 768px)" data-srcset="/images/alt_heroes/vietnamese-food.webp">
-          <source id="resto-image-alt-480" media="(min-width: 480px)" data-srcset="/images/alt_heroes/vietnamese-food-medium.webp">
-          <img id="resto-image" alt="hero image" class="lazyload" data-src='/images/alt_heroes/vietnamese-food-small.webp' src="/images/alt_heroes/vietnamese-food-lqip.webp">
+          <source id="resto-image-alt-768" media="(min-width: 768px)" data-srcset="/images/alt_heroes/vietnamese-food.jpg">
+          <source id="resto-image-alt-480" media="(min-width: 480px)" data-srcset="/images/alt_heroes/vietnamese-food-medium.jpg">
+          <img id="resto-image" alt="hero image" class="lazyload" data-src='/images/alt_heroes/vietnamese-food-small.jpg' src="/images/alt_heroes/vietnamese-food-lqip.jpg">
         </picture>
       </div>
     </section>

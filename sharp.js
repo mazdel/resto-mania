@@ -11,41 +11,43 @@ if (!fs.existsSync(dest)) {
 
 fs.readdirSync(target).forEach((image) => {
   sharp(`${target}/${image}`)
-    .webp({ lossless: true })
+    .jpeg({ mozjpeg: true, quality: 60 })
+    .resize(1280)
     .toFile(
       path.resolve(
         __dirname,
-        `${dest}/${image.split('.').slice(0, -1).join('.')}.webp`,
+        `${dest}/${image.split('.').slice(0, -1).join('.')}.jpg`,
       ),
     );
 
   sharp(`${target}/${image}`)
-    .webp({ lossless: true })
+    .jpeg({ mozjpeg: true })
     .resize(768)
     .toFile(
       path.resolve(
         __dirname,
-        `${dest}/${image.split('.').slice(0, -1).join('.')}-medium.webp`,
+        `${dest}/${image.split('.').slice(0, -1).join('.')}-medium.jpg`,
       ),
     );
 
   sharp(`${target}/${image}`)
-    .webp({ lossless: true })
+    .jpeg({ mozjpeg: true })
     .resize(480)
     .toFile(
       path.resolve(
         __dirname,
-        `${dest}/${image.split('.').slice(0, -1).join('.')}-small.webp`,
+        `${dest}/${image.split('.').slice(0, -1).join('.')}-small.jpg`,
       ),
     );
 
   sharp(`${target}/${image}`)
-    .webp({ lossless: true })
+    .jpeg({ mozjpeg: true })
     .resize(200)
+    .blur()
     .toFile(
       path.resolve(
         __dirname,
-        `${dest}/${image.split('.').slice(0, -1).join('.')}-lqip.webp`,
+        `${dest}/${image.split('.').slice(0, -1).join('.')}-lqip.jpg`,
       ),
     );
 });
