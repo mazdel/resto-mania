@@ -31,4 +31,24 @@ const createReviewForm = (restoId) => /* html */ `
     
   </section>`;
 
-export { createListMenu, createReview, createReviewForm };
+const createRestoPicture = async ({
+  original, medium, small, lqip,
+}) => {
+  await import('lazysizes');
+
+  const innerHTML = /* html */ `
+    <picture>
+      <source id="resto-image-alt-768" media="(min-width: 768px)" data-srcset="${medium}">
+      <source id="resto-image-alt-480" media="(min-width: 480px)" data-srcset="${small}">
+      <img id="resto-image" alt="hero image" class="lazyload" data-src='${original}' src="${lqip}">
+    </picture>
+  `;
+  return innerHTML;
+};
+// prettier-ignore
+export {
+  createListMenu,
+  createReview,
+  createReviewForm,
+  createRestoPicture,
+};

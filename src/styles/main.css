@@ -233,7 +233,8 @@ button {
   height: 80vh;
   filter: brightness(0.8);
 }
-.hero img {
+.hero img,
+#resto-image {
   display: block;
   height: 80vh;
   width: 100%;
