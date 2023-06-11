@@ -1,5 +1,6 @@
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 import DataSource from '../../data/data-source';
 import { createDetailResto } from '../templates/template-creator';
 import FavoriteButtonPresenter from '../../utils/favorite-button-presenter';
@@ -10,13 +11,14 @@ import CONFIG from '../../globals/config';
 
 const Resto = {
   async render() {
+    // TODO: fill lazyload from afterrender
     return /* html */ `
     <section id='hero'>
       <div class='hero'>
         <picture>
-          <source id="resto-image-alt-768" media="(min-width: 768px)" data-srcset="/images/heros/hero-image_4.jpg">
-          <source id="resto-image-alt-480" media="(min-width: 480px)" data-srcset="/images/alt_heroes/hero-image_4-medium.jpg">
-          <img id="resto-image" alt="hero image" class="lazyload" data-src='/images/alt_heroes/hero-image_4-small.jpg'>
+          <source id="resto-image-alt-768" media="(min-width: 768px)" data-srcset="/images/alt_heroes/vietnamese-food.webp">
+          <source id="resto-image-alt-480" media="(min-width: 480px)" data-srcset="/images/alt_heroes/vietnamese-food-medium.webp">
+          <img id="resto-image" alt="hero image" class="lazyload" data-src='/images/alt_heroes/vietnamese-food-small.webp' src="/images/alt_heroes/vietnamese-food-lqip.webp">
         </picture>
       </div>
     </section>
@@ -62,7 +64,7 @@ const Resto = {
     categoriesContainer.innerHTML = dataSource.categories
       .map((category) => category.name)
       .join(', ');
-    detailContainer.innerHTML = createDetailResto(dataSource);
+    detailContainer.innerHTML = await createDetailResto(dataSource);
 
     await FavoriteButtonPresenter.init({
       container: favButtonContainer,

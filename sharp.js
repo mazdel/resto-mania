@@ -11,29 +11,41 @@ if (!fs.existsSync(dest)) {
 
 fs.readdirSync(target).forEach((image) => {
   sharp(`${target}/${image}`)
+    .webp({ lossless: true })
+    .toFile(
+      path.resolve(
+        __dirname,
+        `${dest}/${image.split('.').slice(0, -1).join('.')}.webp`,
+      ),
+    );
+
+  sharp(`${target}/${image}`)
+    .webp({ lossless: true })
     .resize(768)
     .toFile(
       path.resolve(
         __dirname,
-        `${dest}/${image.split('.').slice(0, -1).join('.')}-medium.jpg`,
+        `${dest}/${image.split('.').slice(0, -1).join('.')}-medium.webp`,
       ),
     );
 
   sharp(`${target}/${image}`)
+    .webp({ lossless: true })
     .resize(480)
     .toFile(
       path.resolve(
         __dirname,
-        `${dest}/${image.split('.').slice(0, -1).join('.')}-small.jpg`,
+        `${dest}/${image.split('.').slice(0, -1).join('.')}-small.webp`,
       ),
     );
 
   sharp(`${target}/${image}`)
+    .webp({ lossless: true })
     .resize(200)
     .toFile(
       path.resolve(
         __dirname,
-        `${dest}/${image.split('.').slice(0, -1).join('.')}-lqip.jpg`,
+        `${dest}/${image.split('.').slice(0, -1).join('.')}-lqip.webp`,
       ),
     );
 });

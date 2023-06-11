@@ -1,5 +1,6 @@
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import 'lazysizes/plugins/blur-up/ls.blur-up';
 
 import ellipsisParagraph from '../../utils/ellipsis-paragraph';
 import CONFIG from '../../globals/config';
@@ -13,9 +14,10 @@ const createRestoItem = (resto) => /* html */ `
         <div class="item-legend-right">${resto.rating || ''}</div>
       
       <div class='item-image'>
-        <img class="lazyload" data-src='${CONFIG.BASE_IMG_PATH.SMALL}${
-  resto.pictureId
-}'/>
+        <img class="lazyload" 
+          src="${CONFIG.BASE_IMG_PATH.SMALL}${resto.pictureId}" 
+          data-src='${CONFIG.BASE_IMG_PATH.MEDIUM}${resto.pictureId}'
+        />
       </div>
     </figure>
     <summary class='item-content-body'>
@@ -33,7 +35,7 @@ const createNotFoundResto = () => /* html */ `
   <article id='resto-not-found' class="item-content col-10">
     <figure class='item-content-head'>
       <div class='item-image'>
-        <img src='/images/heros/hero-image_4.jpg'/>
+        <img src='/images/alt_heroes/hero-image_4.webp'/>
       </div>
     </figure>
     <summary class='item-content-body'>
@@ -47,7 +49,9 @@ const createNotFoundResto = () => /* html */ `
   </article>
 `;
 
-const createDetailResto = (resto) => /* html */ `
+const createDetailResto = async (resto) => {
+  const customerReviewElement = await createReview(resto.customerReviews);
+  return /* html */ `
   
   <article id="resto-description" class="detail-content col-10 ">
     <p>${resto.description}</p>
@@ -75,11 +79,12 @@ const createDetailResto = (resto) => /* html */ `
     <div id="newReview">
     </div>
     <div id="reviews" class="detail-content">
-    ${createReview(resto.customerReviews)}
+    ${customerReviewElement}
     </div>
     
   </article>
 `;
+};
 
 const createFavoriteButton = (id = 'fav-button') => /* html */ `
   <button aria-label="tambahkan ke favorit" class="FAB" id="${id}">
