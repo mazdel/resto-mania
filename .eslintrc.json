@@ -16,5 +16,10 @@
   "rules": {
     "no-console": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
-  }
+  },
+  "ignorePatterns": [
+    "**/vendor/**/*.js",
+    "node_modules/**/*.js",
+    "dist/**/*.js"
+  ]
 }
