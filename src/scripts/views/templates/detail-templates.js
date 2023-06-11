@@ -1,12 +1,13 @@
-import moment from 'moment/moment';
-
+// import moment from 'moment/moment';
 // prettier-ignore
 const createListMenu = (menus) => (
   menus.map((menu) => /* html */ `<li>${menu.name}</li>`).join('')
 );
 // prettier-ignore
-const createReview = (reviews) => (
-  reviews.sort((reviewA, reviewB) => {
+const createReview = async (reviews) => {
+  const { default: moment } = await import('moment/moment');
+
+  return reviews.sort((reviewA, reviewB) => {
     moment.locale('id');
     return +moment(reviewB.date, 'DD MMMM YYYY') - +moment(reviewA.date, 'DD MMMM YYYY');
   }).map((review) => /* html */ `
@@ -15,7 +16,8 @@ const createReview = (reviews) => (
         <p class="review-date col-4">${review.date}</p>
         <p class="customer-comment col-10"> ${review.review} </p>
       </section>
-  `).join(''));
+  `).join('');
+};
 
 const createReviewForm = (restoId) => /* html */ `
   <section class="customer-review d-flex flex-wrap">
