@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: Quicksand, sans-serif;
+  min-height: 100vh;
 }
 body *:focus {
   outline-style: solid;
@@ -226,17 +227,17 @@ button {
 }
 
 #mainContent {
-  min-height: 80vh;
+  min-height: 90vh;
 }
 
 .hero {
-  height: 80vh;
+  height: 90vh;
   filter: brightness(0.8);
 }
 .hero img,
 #resto-image {
   display: block;
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   object-fit: cover;
   position: relative;
