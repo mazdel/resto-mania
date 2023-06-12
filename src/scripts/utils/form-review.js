@@ -21,7 +21,9 @@ const newReview = {
       event.preventDefault();
       const data = parseForm(form);
       const result = await DataSource.postReview(data);
-      this.resultContainer.innerHTML = createReview(result.customerReviews);
+      this.resultContainer.innerHTML = await createReview(
+        result.customerReviews,
+      );
       if (result.error === false) {
         form.reset();
       }
