@@ -192,10 +192,11 @@ button {
   background-color: wheat;
   color: black;
   position: absolute;
-  top: -40px;
+  top: -100px;
   left: 0;
   z-index: 9999;
-  padding: 5px;
+  padding: 0.5em 0.2em;
+  font-size: 1.4em;
 }
 #skip-to-content:focus {
   top: 0;
@@ -333,6 +334,7 @@ button {
 .item-content-body a {
   text-decoration: none;
   color: black;
+  padding: 0.5em 0;
 }
 .item-content-body a:hover {
   text-decoration: underline;
@@ -401,7 +403,7 @@ button {
   border-width: thin;
   border-color: darkorange;
   min-height: fit-content;
-  padding: 0.5em;
+  padding: 1.1em 0.5em;
 }
 
 button.form-control {
@@ -409,6 +411,7 @@ button.form-control {
   background-color: darkorange;
   cursor: pointer;
 }
+
 .FAB {
   position: fixed;
   bottom: 5vh;
@@ -428,4 +431,7 @@ button.form-control {
   background-color: darkorange;
   padding: 1em 1.5em;
   text-align: center;
+}
+.footnote a {
+  padding: 1em 0;
 }
