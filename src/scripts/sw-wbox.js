@@ -1,18 +1,17 @@
 // sw-wbox.js
-import { registerRoute, Route, NavigationRoute } from 'workbox-routing';
+import { registerRoute, Route } from 'workbox-routing';
 import {
   StaleWhileRevalidate,
   NetworkFirst,
   CacheFirst,
 } from 'workbox-strategies';
+import { precacheAndRoute } from 'workbox-precaching';
 import CONFIG from './globals/config';
 import API_ENDPOINT from './globals/api-endpoint';
 
-const navigationRoute = new NavigationRoute(
-  new NetworkFirst({
-    cacheName: 'navigations',
-  }),
-);
+// eslint-disable-next-line no-restricted-globals, no-underscore-dangle
+precacheAndRoute(self.__WB_MANIFEST);
+
 const jsAndManifest = new Route(({ url }) => {
   /* eslint-disable no-restricted-globals */
   const allowedExtensions = ['js', 'json', 'webmanifest'];
@@ -84,7 +83,6 @@ const corsStyles = new Route(
   }),
 );
 
-registerRoute(navigationRoute);
 registerRoute(jsAndManifest);
 registerRoute(imageAssetRoute);
 registerRoute(apiRoute);
