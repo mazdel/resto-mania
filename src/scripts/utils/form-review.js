@@ -14,7 +14,7 @@ const newReview = {
     await this.render();
   },
   async render() {
-    const template = createReviewForm(this.idResto);
+    const template = await createReviewForm(this.idResto);
     this.container.innerHTML = template;
     const form = document.querySelector(`form#${this.idResto}`);
     form.addEventListener('submit', async (event) => {

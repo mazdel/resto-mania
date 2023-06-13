@@ -19,7 +19,7 @@ const createReview = async (reviews) => {
   `).join('');
 };
 
-const createReviewForm = (restoId) => /* html */ `
+const createReviewForm = async (restoId) => /* html */ `
   <section class="customer-review d-flex flex-wrap">
   <form id="${restoId}" class="col-10 justify-content-space-between">
     <input type="hidden" name="id" value="${restoId}"/>
@@ -31,6 +31,7 @@ const createReviewForm = (restoId) => /* html */ `
     
   </section>`;
 
+// prettier-ignore
 const createRestoPicture = async ({
   original, medium, small, lqip,
 }) => {
