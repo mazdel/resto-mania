@@ -1,7 +1,7 @@
 {
   "name": "Resto Mania",
   "short_name": "R-Mania",
-  "theme_color": "#ff8c00",
+  "theme_color": "#FFF",
   "background_color": "#ff8c00",
   "display": "standalone",
   "scope": "/",
