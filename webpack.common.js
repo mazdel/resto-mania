@@ -3,13 +3,12 @@ const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
-// https://webpack.js.org/plugins/css-minimizer-webpack-plugin/#getting-started
 
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
-    sw: path.resolve(__dirname, 'src/scripts/sw-wbox.js'),
   },
   output: {
     filename: '[name].bundle.js',
@@ -77,6 +76,10 @@ module.exports = {
       path: path.resolve(__dirname, '.env'),
       systemvars: true,
       safe: true,
+    }),
+    new InjectManifest({
+      swSrc: path.resolve(__dirname, 'src/scripts/sw-wbox.js'),
+      swDest: './sw.bundle.js',
     }),
   ],
 };
